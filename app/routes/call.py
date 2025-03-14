@@ -1,7 +1,7 @@
 from fastapi import APIRouter, HTTPException, Query
 from pydantic import BaseModel, Field, EmailStr
 from app.services.call_services import make_phone_call
-from app.models.model import CallRequest
+# from app.models.model import CallRequest
 
 class CallRequest(BaseModel):
     recipient_phone: str
