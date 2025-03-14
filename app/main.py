@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
-from app.routes import email, call
+from app.routes import email, call, upload
 
 app = FastAPI()
 
@@ -24,6 +24,7 @@ app.add_middleware(
 # Include the scraper API
 app.include_router(email.router, prefix="/api")
 app.include_router(call.router, prefix="/api")
+app.include_router(upload.router, prefix="/api")
 
 @app.get("/")
 def home():
