@@ -40,7 +40,7 @@ def generate_cold_email(request: GenerationRequest):
                 )
         # return "Success"
     except Exception as e:
-        return "Failure"
+        return {"message": f"Email generation failed: {e}"}
     
 
 
