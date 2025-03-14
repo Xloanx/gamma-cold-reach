@@ -3,7 +3,7 @@ from email.message import EmailMessage
 import smtplib
 import ssl
 from config import sender_password
-from app.services.llm_services import generate_mail_body
+from app.services.llm_services import generate_output, generate_outreach_content
 
 def generate_email(
         recipient_email,  
@@ -25,7 +25,7 @@ def generate_email(
     - sender_email (str): Sender's email address (requires SMTP access)
     - sender_password (str): Sender's email password or app-specific password
     """
-    return generate_mail_body(recipient_email,  
+    return generate_output(recipient_email,  
                 recipient_phone,
                 company_name,  
                 industry,
